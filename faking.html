@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <div style="text-align: center;">
+    <h2>faking words</h2>
+    <form name="f">
+      <textarea name="txt" cols="50" rows="10" onkeydown="typeTextare();"></textarea>
+    </form>
+    
+    <script>
+      let str = [' ', 'M', 'ì', 'n', 'h', ' ', 
+                'c', 'h', 'à', 'o', ' ', 
+                'c', 'á', 'c', ' ', 
+                'b', 'ạ',	'n', '!',  '!',
+               ];
+
+      document.write(str.length); 
+      let new_str = '';
+
+      function typeTextare() {
+        t = document.f.txt.value;
+        j = t.length;
+        n = (str.length-1);
+                
+        if (j > 0) {
+          for (let i = 0; i < j; i++) {
+            new_str += str[i];
+
+            if (i == n) {
+              document.f.txt.value = '';
+              new_str = '';
+           
+            }
+          }
+        }
+
+        document.f.txt.value = new_str;
+        new_str = '';
+        
+      }
+
+      setTimeout("typeTextare()",1);
+    
+    </script>
+
+
+  </div>
+
+</body>
+
+
+</html>
